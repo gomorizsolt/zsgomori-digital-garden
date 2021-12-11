@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nuxt-content .nuxt-content-highlight {
+  @apply relative;
+}
+
+.nuxt-content .nuxt-content-highlight > .filename {
+  @apply absolute right-0 top-0 text-black z-10 font-mono text-sm tracking-tight leading-none mr-4 mt-3;
+}
