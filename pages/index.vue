@@ -64,7 +64,7 @@ export default {
       }
 
       return this.notes.filter((note) =>
-        note.title.includes(this.searchString.toLowerCase())
+        note.title.toLowerCase().includes(this.searchString.toLowerCase())
       );
     },
     filteredNotes() {
