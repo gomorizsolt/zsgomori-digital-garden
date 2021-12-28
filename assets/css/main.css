@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-slate-100;
+  }
+
+  @font-face {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-display: optional;
+    src: url(~assets/fonts/montserrat/400-regular.woff2) format("woff");
+  }
+
+  @font-face {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-display: optional;
+    src: url(~assets/fonts/montserrat/500-medium.woff2) format("woff");
+  }
+
+  @font-face {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-display: optional;
+    src: url(~assets/fonts/montserrat/700-bold.woff2) format("woff");
+  }
+}
+
 .nuxt-content .nuxt-content-highlight {
   @apply relative;
 }
