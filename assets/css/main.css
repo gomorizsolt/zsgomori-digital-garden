@@ -17,6 +17,13 @@
 
   @font-face {
     font-family: Montserrat;
+    font-weight: 500;
+    font-display: optional;
+    src: url("/fonts/montserrat/500-medium.woff2") format("woff");
+  }
+
+  @font-face {
+    font-family: Montserrat;
     font-weight: 700;
     font-display: optional;
     src: url("/fonts/montserrat/700-bold.woff2") format("woff");
@@ -28,5 +35,5 @@
 }
 
 .nuxt-content .nuxt-content-highlight > .filename {
-  @apply absolute right-0 top-0 z-10 text-xs mr-4 mt-3 bg-slate-200 text-slate-900 px-2 py-1 rounded;
+  @apply absolute right-0 top-0 z-10 text-xs mr-4 mt-3 font-medium bg-slate-200 text-slate-900 px-2 py-1 rounded;
 }

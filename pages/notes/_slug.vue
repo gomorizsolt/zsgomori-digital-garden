@@ -18,5 +18,19 @@ export default {
       note,
     };
   },
+  head() {
+    return {
+      title: this.note.title,
+      link: [
+        {
+          rel: "preload",
+          as: "font",
+          crossorigin: "crossorigin",
+          type: "font/woff2",
+          href: "/fonts/montserrat/500-medium.woff2",
+        },
+      ],
+    };
+  },
 };
 </script>

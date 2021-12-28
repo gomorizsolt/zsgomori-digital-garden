@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "zsgomori-digital-garden",
+    title: "Zsolt Gomori's Digital Garden",
     htmlAttrs: {
       lang: "en",
     },
