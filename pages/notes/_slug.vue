@@ -1,8 +1,10 @@
 <template>
   <div>
-    <NuxtLink to="/">back</NuxtLink>
+    <h1>{{ note.title }}</h1>
 
-    <NuxtContent class="prose prose-sm sm:prose mx-auto" :document="note" />
+    <NoteTagsList :tags="note.tags" />
+
+    <NuxtContent :document="note" />
   </div>
 </template>
 

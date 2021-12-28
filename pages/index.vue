@@ -1,37 +1,19 @@
 <template>
   <div>
-    <div class="flex flex-wrap justify-around">
-      <ClientOnly>
-        <div
-          v-for="tag in allTags"
-          :key="tag"
-          :class="{ 'bg-blue-500': selectedTagsLookup[tag] }"
-          @click="onSelect(tag)"
-        >
-          #{{ tag }}
-        </div>
-      </ClientOnly>
-
-      <button @click="clearSelectedTags">Clear</button>
-    </div>
-
-    <input
-      :value="searchString"
-      type="text"
-      placeholder="Search"
-      @input="handleSearchStringChange"
+    <TRichSelect
+      class="mb-6"
+      :options="options"
+      :close-on-select="false"
+      placeholder="Filter by tags"
+      multiple
     />
 
-    <div class="grid grid-cols-notes gap-x-4 gap-y-8">
-      <NuxtLink
+    <div class="space-y-5">
+      <NoteCard
         v-for="note in filteredNotes"
-        :key="note.slug + note.createdAt"
-        :to="`/notes/${note.slug}`"
-      >
-        {{ note.title }}
-
-        {{ note.createdAt.formatted }}
-      </NuxtLink>
+        :key="`${note.slug}${note.createdAt}`"
+        :note="note"
+      />
     </div>
   </div>
 </template>
@@ -54,6 +36,12 @@ export default {
   computed: {
     allTags() {
       return new Set(this.notes.map((note) => note.tags).flat());
+    },
+    options() {
+      return Array.from(this.allTags).map((tag) => ({
+        value: tag,
+        text: `#${tag}`,
+      }));
     },
     selectedTagsLookup() {
       return Object.fromEntries(this.selectedTags.map((tag) => [tag, true]));
@@ -92,12 +80,12 @@ export default {
     },
     // TODO debounce
     handleSearchStringChange(event) {
-      const trimemdSearchString = event.target.value.trim?.();
+      const trimmedSearchStirng = event.target.value.trim?.();
 
-      if (!trimemdSearchString) {
+      if (!trimmedSearchStirng) {
         this.searchString = "";
       } else {
-        this.searchString = trimemdSearchString;
+        this.searchString = trimmedSearchStirng;
       }
     },
   },
