@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <header>header</header>
-
-    <main class="flex-1 mx-auto max-w-5xl w-full px-4">
+    <main class="flex-1 mx-auto max-w-2xl w-full px-4 py-8">
       <Nuxt />
     </main>
 
-    <footer>footer</footer>
+    <footer class="text-center py-6 text-sm">
+      Made with ♥ by Zsolt Gomori
+    </footer>
   </div>
 </template>
 
