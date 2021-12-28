@@ -14,7 +14,23 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "preload",
+        as: "font",
+        crossorigin: "crossorigin",
+        type: "font/woff2",
+        href: "/fonts/montserrat/400-regular.woff2",
+      },
+      {
+        rel: "preload",
+        as: "font",
+        crossorigin: "crossorigin",
+        type: "font/woff2",
+        href: "/fonts/montserrat/700-bold.woff2",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

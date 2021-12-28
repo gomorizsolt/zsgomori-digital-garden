@@ -13,9 +13,6 @@ module.exports = {
       fontFamily: {
         sans: ["Montserrat", ...fontFamily.sans],
       },
-      gridTemplateColumns: {
-        notes: "repeat(auto-fit, minmax(250px, 1fr))",
-      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
