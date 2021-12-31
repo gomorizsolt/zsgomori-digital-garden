@@ -1,6 +1,7 @@
 <template>
   <div>
     <TRichSelect
+      v-model="selectedTags"
       class="mb-6"
       :options="options"
       :close-on-select="false"
@@ -43,9 +44,6 @@ export default {
         text: `#${tag}`,
       }));
     },
-    selectedTagsLookup() {
-      return Object.fromEntries(this.selectedTags.map((tag) => [tag, true]));
-    },
     notesMatchingSearchString() {
       if (!this.searchString) {
         return this.notes;
@@ -66,28 +64,15 @@ export default {
     },
   },
   methods: {
-    onSelect(selectedTag) {
-      if (this.selectedTags.includes(selectedTag)) {
-        this.selectedTags = this.selectedTags.filter(
-          (tag) => tag !== selectedTag
-        );
-      } else {
-        this.selectedTags.push(selectedTag);
-      }
-    },
-    clearSelectedTags() {
-      this.selectedTags = [];
-    },
     // TODO debounce
-    handleSearchStringChange(event) {
-      const trimmedSearchStirng = event.target.value.trim?.();
-
-      if (!trimmedSearchStirng) {
-        this.searchString = "";
-      } else {
-        this.searchString = trimmedSearchStirng;
-      }
-    },
+    // handleSearchStringChange(event) {
+    //   const trimmedSearchStirng = event.target.value.trim?.();
+    //   if (!trimmedSearchStirng) {
+    //     this.searchString = "";
+    //   } else {
+    //     this.searchString = trimmedSearchStirng;
+    //   }
+    // },
   },
 };
 </script>
