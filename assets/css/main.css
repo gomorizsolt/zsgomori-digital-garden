@@ -7,7 +7,6 @@
     @apply bg-slate-100;
   }
 
-  /* https://nuxtjs.org/docs/directory-structure/assets#fonts */
   @font-face {
     font-family: Montserrat;
     font-weight: 400;
