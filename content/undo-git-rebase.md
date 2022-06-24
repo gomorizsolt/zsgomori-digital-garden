@@ -33,5 +33,5 @@ git reset --hard BACKUP
 
 ## Resources
 
-- [Undoing a git rebase](https://stackoverflow.com/questions/134882/undoing-a-git-rebase)
-- [What's the difference between git reset --mixed, --soft, and --hard?](https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard)
+- [StackOverflow: Undoing a git rebase](https://stackoverflow.com/questions/134882/undoing-a-git-rebase)
+- [StackOverflow: What's the difference between git reset --mixed, --soft, and --hard?](https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard)
